@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://poolresurfacingexperts.com/sitemap.xml
+Sitemap: https://poolresurfacingusa.com/sitemap.xml
