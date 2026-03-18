@@ -187,6 +187,46 @@
         .compare-box { background: #fffbeb; border: 2px solid #f59e0b; border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
         .compare-box p { margin-bottom: 0; color: #92400e; font-size: 0.95rem; }
         @media (max-width: 768px) { .hero h1 { font-size: 1.75rem; } nav ul { display: none; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    
+        /* MOBILE STICKY CTA */
+        .mobile-cta-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1e40af;
+            padding: 0.75rem 1rem;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            gap: 0.5rem;
+        }
+        .mobile-cta-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            flex: 1;
+        }
+        .mobile-cta-bar .cta-call {
+            background: #f97316;
+            color: #fff;
+        }
+        .mobile-cta-bar .cta-quote {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+        @media (max-width: 768px) {
+            .mobile-cta-bar { display: flex; }
+            body { padding-bottom: 70px; }
+            .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+        }
     </style>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -713,5 +753,10 @@ function calculateCost() {
     </div>
 </footer>
 
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-cta-bar">
+        <a href="tel:+18137233209" class="cta-call">📞 Call Now</a>
+        <a href="#cities" class="cta-quote">Browse Cities</a>
+    </div>
 </body>
 </html>
