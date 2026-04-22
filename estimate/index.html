@@ -72,6 +72,8 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 .footer{text-align:center;padding:32px 16px;font-size:.8125rem;color:#94a3b8}
 .footer a{color:#e94560;font-weight:500}
 </style>
+    <link rel="stylesheet" href="/css/style.v2.5.css">
+    <link rel="stylesheet" href="/css/site-theme.css">
 </head>
 <body>
 
@@ -79,6 +81,16 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
   <div class="nav__logo">Pool <span>Pro</span></div>
   <a href="#" class="nav__cta">Call Now</a>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/texas/">Texas</a>
+  <a href="/arizona/">Arizona</a>
+  <a href="/florida/">Florida</a>
+  <a href="/nevada/">Nevada</a>
+  <a href="tel:+18137233209"><i class="ph ph-phone"></i> (813) 723-3209</a>
+</div>
 
 <main class="page">
 
@@ -333,5 +345,6 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
 if(window.location.hash==='#success'){document.getElementById('form').style.display='none';document.getElementById('success').style.display='block';}
 document.getElementById('photos').addEventListener('change',function(){document.getElementById('upload-label').textContent=this.files.length?this.files.length+' photo'+(this.files.length>1?'s':'')+' selected':'Tap to upload photos';});
 </script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
