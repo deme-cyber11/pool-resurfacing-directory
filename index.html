@@ -428,6 +428,7 @@
             body { padding-bottom: 70px; }
             .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
         }
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
     </style>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -718,7 +719,7 @@
         <div class="container">
             <h2>National Pool Resurfacing Cost Guide (2026)</h2>
             <p class="section-subtitle">Average costs by surface type across our covered markets.</p>
-            <table class="cost-table">
+            <div class="table-wrap"><table class="cost-table">
                 <thead>
                     <tr>
                         <th>Surface Type</th>
@@ -771,7 +772,7 @@
                         <td>Low maintenance</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
             <p style="margin-top:1rem; font-size:0.85rem; color:var(--gray-500);">*Prices are for an average 450–500 sq ft pool. See city-specific guides for local pricing.</p>
         </div>
     </section>
