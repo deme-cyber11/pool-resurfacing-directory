@@ -259,7 +259,13 @@ html.js .reveal.visible {
 }
 
 /* ========== 2. HERO ========== */
-.hero {
+/* Scoped 2026-09-30: this block styles the BEM hero (.hero > .hero__content).
+   Pages here author their own .hero in their inline <style>, which loads BEFORE
+   this file -- so a bare `.hero` selector here silently overrode every page's
+   hero (forcing display:flex + min-height:100vh and laying the badge/h1/subtitle/
+   CTA out in a ROW, off both edges). :has() keeps v2.5's hero for BEM markup
+   only and hands bare .hero back to the page that authored it. */
+.hero:has(> .hero__content) {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -402,7 +408,7 @@ html.js .reveal.visible {
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 100px 0 60px; min-height: auto; }
+  .hero:has(> .hero__content) { padding: 100px 0 60px; min-height: auto; }
   .hero__stats { gap: 32px; }
   .hero__stat-num { font-size: 1.75rem; }
 }
@@ -1798,7 +1804,11 @@ html.js .reveal.visible {
 }
 
 /* ========== BREADCRUMB ========== */
-.breadcrumb {
+/* Scoped 2026-09-30, same reason as .hero above: v2.5's .breadcrumb is a
+   standalone page-top BAR (120px top pad + dark fill) wrapping .breadcrumb__inner.
+   These pages use .breadcrumb as a plain text line INSIDE the hero, so the bare
+   selector painted a 142px dark navy rectangle across every city/state hero. */
+.breadcrumb:has(> .breadcrumb__inner) {
   padding: 120px 0 0;
   background: var(--color-dark-bg);
 }

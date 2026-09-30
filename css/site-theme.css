@@ -119,3 +119,84 @@ main table,
   margin-bottom: 2.5rem;
 }
 .testimonial-section .testimonial-quote { font-style: normal !important; }
+
+/* ── Mobile horizontal-scroll fixes (2026-09-30) ──
+   1. The off-canvas .mobile-nav drawer sits at translateX(100%) but still
+      contributed 280px of scrollable overflow, so every page side-scrolled on a
+      phone. `clip` (not `hidden`) kills the scroll without creating a scroll
+      container, which would break the sticky nav.
+   2. site-theme already wrapped wide tables in a scroller, but only inside
+      main/.content-*/.blog-article-content. The city pages put .pricing-table
+      straight inside <section>, so it missed them and overflowed by ~90px. */
+html { overflow-x: clip; }
+
+@media (max-width: 900px) {
+  /* table[class] keeps specificity (0,1,1) so it beats the pages inline
+     .pricing-table { overflow-x:hidden } -- a media query adds no weight. */
+  table,
+  table[class] {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Narrow phones (<=420px): every grid on the site uses
+   repeat(auto-fit, minmax(<fixed>px, 1fr)) with floors of 180-300px, so on a
+   305px content box the track stayed wider than its container and the cards
+   hung past the right edge. One column below 420px removes the floor. */
+@media (max-width: 420px) {
+  .calc-grid, .card-grid, .city-grid, .footer-grid, .info-grid,
+  .stats-grid, .trust-grid, .water-zones {
+    /* minmax(0,1fr), not 1fr: a 1fr track's automatic minimum is min-content,
+       so an unbreakable string like "$5,200-$10,800" stretched the track past
+       its own container. minmax(0,...) lets the track actually shrink. */
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .calc-grid > *, .card-grid > *, .city-grid > *, .footer-grid > *,
+  .info-grid > *, .stats-grid > *, .trust-grid > *, .water-zones > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Footer legibility: a global `p { color: var(--gray-700) }` beat the footer's
+   inherited white, so every footer paragraph rendered #374151 on the #111827
+   footer -- 1.72:1, effectively unreadable. `footer p` (0,0,2) outranks it. */
+footer p,
+footer li,
+footer span,
+footer address,
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.78);
+}
+footer a { color: rgba(255, 255, 255, 0.78); }
+footer a:hover { color: #ffffff; }
+
+/* ── Contrast (2026-09-30, measured on rendered pixels) ──
+   White on #f97316 is 2.80:1. Two changes together clear WCAG AA: darken the
+   action orange to #ea580c (3.56:1) and lift button text to 1.2rem/700, which
+   makes it "large text" (>=18.66px bold) where the threshold is 3.0, not 4.5. */
+.cta-hero,
+.btn-primary,
+.cta-nav,
+.cta-section .cta-hero,
+a.submit-btn,
+button.submit-btn {
+  background: #ea580c;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* --gray-500 (#6b7280) is 4.33:1 on the #e8f4fd info panels -- just under AA.
+   #5f6773 reads the same weight visually and measures 5.11:1 there, 5.72 on white. */
+:root { --gray-500: #5f6773; }
+
+/* Brand blue #145da0 is 2.64:1 on the #0f172a dark bands. Use the light tint. */
+.hero a:not(.cta-hero):not(.btn-primary):not(.phone),
+footer a,
+.breadcrumb a,
+[class*="dark"] a {
+  color: #7dd3fc;
+}
