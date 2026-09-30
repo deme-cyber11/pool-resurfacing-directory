@@ -200,3 +200,21 @@ footer a,
 [class*="dark"] a {
   color: #7dd3fc;
 }
+
+/* City cards used to be <a class="city-card"> wrapping a nested "Featured:"
+   <a>. Nested anchors are invalid, so the parser auto-closed the card and the
+   featured link + CTA escaped into .city-grid as two full-size blocks beside
+   it. The card is now a <div> and the CTA is the real link; this overlay keeps
+   the whole card clickable, and the featured link sits above it. */
+.city-card { position: relative; }
+.city-card a.city-link::after,
+.city-card a.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.city-card a[href^="http"]:not(.city-link):not(.btn-primary) {
+  position: relative;
+  z-index: 1;
+}
