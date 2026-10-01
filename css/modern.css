@@ -269,3 +269,31 @@ body.dm .mobile-cta-bar { display: none; }
   body.dm footer { padding-bottom: 96px; }
 }
 @media (prefers-reduced-motion: reduce) { body.dm * { transition: none !important; } }
+
+/* Round 2 (2026-10-01): phone + tablet fixes. Media-query only, desktop untouched. */
+@media (hover: none) {
+  body.dm nav .logo { min-height: 44px; }
+  body.dm .hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  body.dm .breadcrumb a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
+  body.dm .dm-provider a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-right: 16px; }
+}
+@media (min-width: 641px) and (max-width: 960px) {
+  body.dm .water-zones { grid-template-columns: repeat(2, 1fr); }
+  body.dm .calc-grid { grid-template-columns: repeat(2, 1fr); }
+  body.dm .calc-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  body.dm .data-source-note, body.dm .footer-bottom p, body.dm footer .data-source-note { font-size: .95rem; }
+}
+@media (max-width: 640px) {
+  body.dm .dm-provider a { display: flex; width: fit-content; max-width: 100%; }
+}
+@media (max-width: 640px) {
+  /* body already reserved 70px for the sticky call bar on top of the footer's 96px: one reserve is enough */
+  body.dm { padding-bottom: 0; }
+  body.dm footer { padding-top: 44px; }
+  /* pill chips wrapped into ragged rows with a lone last chip; even 2-up rows instead */
+  body.dm .trust-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  body.dm .trust-item { border-radius: 14px; align-items: flex-start; line-height: 1.35; }
+  body.dm .trust-item .icon { padding-top: 2px; }
+}
