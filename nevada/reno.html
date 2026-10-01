@@ -213,8 +213,6 @@
             .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
         }
     </style>
-    <link rel="stylesheet" href="/css/style.v2.5.css?v=20260930">
-    <link rel="stylesheet" href="/css/site-theme.css?v=20260930">
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -223,11 +221,12 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vqcduyfdfl");
   </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="/css/modern.css?v=20261001">
 </head>
-<body>
+<body class="dm dm-city">
 
 <nav>
-    <a href="/" class="logo"><span class="nav-logo-icon" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--color-accent,#145da0);border-radius:6px;font-weight:900;font-size:1.2rem;color:#fff;flex-shrink:0;margin-right:.5rem">PR</span> Pool Resurfacing <span>Experts</span></a>
+    <a href="/" class="logo"><span class="nav-logo-icon">PR</span> Pool Resurfacing <span>Experts</span></a>
     <ul>
         <li><a href="/texas/">Texas</a></li>
         <li><a href="/arizona/">Arizona</a></li>
@@ -245,10 +244,10 @@
   <a href="/arizona/">Arizona</a>
   <a href="/florida/">Florida</a>
   <a href="/nevada/">Nevada</a>
-  <a href="tel:+18137233209"><i class="ph ph-phone"></i> (813) 723-3209</a>
+  <a href="tel:+18137233209"><svg class="dm-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> (813) 723-3209</a>
 </div>
 
-<div class="hero">
+<div class="hero" style="--hero-img:url(/images/site/state-nevada.jpg)">
     <p class="breadcrumb"><a href="/">Home</a> &rarr; <a href="/nevada/">Nevada</a> &rarr; Reno</p>
     <h1>Pool Resurfacing Reno NV<br>2026 Costs, Contractors & Local Guide</h1>
     <p class="subtitle">Reno pool resurfacing costs $4,500&ndash;$9,500 in 2026. High desert climate with cold winters and intense altitude UV &mdash; find C-13 licensed contractors in Washoe County.</p>
@@ -273,7 +272,7 @@
         <h2>Reno Pool Resurfacing Costs 2026</h2>
         <p>Reno's short resurfacing season (May&ndash;October) compresses contractor demand into just a few months, pushing prices higher than you'd expect for a smaller market. Fewer pool contractors serve Washoe County compared to Las Vegas, and the compressed scheduling adds a short-season premium to most quotes.</p>
 
-        <table class="pricing-table">
+        <div class="dm-finishes"><figure class="dm-finish" style="margin:0"><img src="/images/site/finish-white-plaster.jpg" alt="White plaster pool finish" loading="lazy" width="1000" height="667"><span>White plaster</span></figure><figure class="dm-finish" style="margin:0"><img src="/images/site/finish-pebble.jpg" alt="Pebble aggregate pool finish" loading="lazy" width="1000" height="667"><span>Pebble aggregate</span></figure><figure class="dm-finish" style="margin:0"><img src="/images/site/finish-quartz.jpg" alt="Quartz aggregate pool finish" loading="lazy" width="1000" height="667"><span>Quartz aggregate</span></figure><figure class="dm-finish" style="margin:0"><img src="/images/site/finish-fiberglass.jpg" alt="Fiberglass pool finish" loading="lazy" width="1000" height="667"><span>Fiberglass</span></figure></div><div class="dm-table-wrap"><table class="pricing-table">
             <thead>
                 <tr>
                     <th>Surface Type</th>
@@ -313,8 +312,8 @@
                     <td>15&ndash;20 years</td>
                 </tr>
             </tbody>
-        </table>
-        <p style="font-size:0.85rem;color:var(--gray-500);">*Prices for average 400&ndash;450 sq ft pool. Get 3+ quotes from C-13 licensed contractors.</p>
+        </table></div>
+        <p>*Prices for average 400&ndash;450 sq ft pool. Get 3+ quotes from C-13 licensed contractors.</p>
     </div>
 </section>
 
@@ -345,7 +344,7 @@
         <div class="card-grid">
             <div class="card">
                 <h3>How to Verify a C-13 License</h3>
-                <p>Visit <a href="https://www.nvcontractorsboard.com" target="_blank" style="color:var(--blue-700);">nvcontractorsboard.com</a> and search by contractor name or license number. Never hire a contractor who cannot provide their C-13 license number.</p>
+                <p>Visit <a href="https://www.nvcontractorsboard.com" target="_blank">nvcontractorsboard.com</a> and search by contractor name or license number. Never hire a contractor who cannot provide their C-13 license number.</p>
             </div>
             <div class="card warning">
                 <h3>Red Flags to Watch For</h3>
@@ -358,18 +357,9 @@
 <section>
     <div class="container">
         <h2>Frequently Asked Questions &mdash; Reno Pool Resurfacing</h2>
-        <div class="faq-item">
-            <h3>How much does pool resurfacing cost in Reno?</h3>
-            <p>Reno pool resurfacing typically costs $4,500&ndash;$9,500 &mdash; higher than you'd expect for a smaller market because Reno's short resurfacing season (May&ndash;October) compresses demand. White plaster $3,500&ndash;$7,000, pebble aggregate $6,500&ndash;$12,000, quartz $5,500&ndash;$10,000 for a standard 400&ndash;450 sq ft Washoe County pool.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How does Reno's high desert climate affect pool surfaces?</h3>
-            <p>Reno sits at 4,500 ft elevation with intense UV exposure year-round, but unlike Las Vegas, Reno gets cold winters with freeze-thaw cycles that crack plaster. Pool season is only 5 months (May&ndash;September). The combination of high-altitude UV in summer and freeze risk in winter means surfaces need to handle both extremes. Pebble aggregate handles freeze-thaw better than plaster.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Do pool contractors need a license in Nevada?</h3>
-            <p>Yes, Nevada requires a C-13 license from the Nevada State Contractors Board. Verify at <a href="https://www.nvcontractorsboard.com" target="_blank" style="color:var(--blue-700);">nvcontractorsboard.com</a>.</p>
-        </div>
+        <details class="faq-item"><summary><h3>How much does pool resurfacing cost in Reno?</h3></summary><div class="faq-a"><p>Reno pool resurfacing typically costs $4,500&ndash;$9,500 &mdash; higher than you'd expect for a smaller market because Reno's short resurfacing season (May&ndash;October) compresses demand. White plaster $3,500&ndash;$7,000, pebble aggregate $6,500&ndash;$12,000, quartz $5,500&ndash;$10,000 for a standard 400&ndash;450 sq ft Washoe County pool.</p></div></details>
+        <details class="faq-item"><summary><h3>How does Reno's high desert climate affect pool surfaces?</h3></summary><div class="faq-a"><p>Reno sits at 4,500 ft elevation with intense UV exposure year-round, but unlike Las Vegas, Reno gets cold winters with freeze-thaw cycles that crack plaster. Pool season is only 5 months (May&ndash;September). The combination of high-altitude UV in summer and freeze risk in winter means surfaces need to handle both extremes. Pebble aggregate handles freeze-thaw better than plaster.</p></div></details>
+        <details class="faq-item"><summary><h3>Do pool contractors need a license in Nevada?</h3></summary><div class="faq-a"><p>Yes, Nevada requires a C-13 license from the Nevada State Contractors Board. Verify at <a href="https://www.nvcontractorsboard.com" target="_blank">nvcontractorsboard.com</a>.</p></div></details>
 
         <div class="cta-box">
             <h3>Get a Free Reno Pool Resurfacing Quote</h3>
@@ -381,13 +371,13 @@
 
 <footer>
     <p>&copy; 2026 Pool Resurfacing Experts | <a href="/">Home</a> | <a href="/nevada/">Nevada</a> | <a href="/nevada/las-vegas.html">Las Vegas</a> | <a href="/nevada/reno.html">Reno</a></p>
-    <p style="margin-top:0.5rem;font-size:0.8rem;">Content is for informational purposes only. Always verify contractor licenses with the Nevada State Contractors Board before hiring.</p>
+    <p>Content is for informational purposes only. Always verify contractor licenses with the Nevada State Contractors Board before hiring.</p>
 </footer>
 
     <!-- Mobile Sticky CTA -->
     <div class="mobile-cta-bar">
-        <a href="tel:+18137233209" class="cta-call">📞 Call Now</a>
-        <a href="#cities" class="cta-quote">Browse Cities</a>
+        <a href="tel:+18137233209" class="cta-call"><svg class="dm-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> Call Now</a>
+        <a href="/estimate/" class="cta-quote">Free Estimate</a>
     </div>
     <script src="/js/main.js"></script>
 </body>
