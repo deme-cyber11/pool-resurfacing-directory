@@ -247,6 +247,7 @@ body.dm .mobile-cta-bar { display: none; }
 @media (max-width: 640px) {
   body.dm { font-size: 16px; }
   body.dm .container { padding: 0 18px; }
+  body.dm section:not(.cta-section) { padding: 44px 0; }
   body.dm nav { padding: 12px 18px; }
   body.dm .hero { padding: 48px 18px 84px; background: linear-gradient(180deg, rgba(8,27,48,.9), rgba(8,27,48,.82)), var(--hero-img, var(--navy)) center / cover no-repeat; }
   body.dm .hero .cta-hero, body.dm .hero .btn-primary, body.dm .hero .phone, body.dm .hero .btn-secondary { width: 100%; justify-content: center; text-align: center; margin-right: 0; }
