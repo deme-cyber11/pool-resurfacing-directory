@@ -297,3 +297,9 @@ body.dm .mobile-cta-bar { display: none; }
   body.dm .trust-item { border-radius: 14px; align-items: flex-start; line-height: 1.35; }
   body.dm .trust-item .icon { padding-top: 2px; }
 }
+
+/* Hero photo as WebP where the browser supports image-set type(); others keep the JPEG
+   in --hero-img (speed: LCP). */
+@supports (background-image: image-set(url("a.webp") type("image/webp"))) {
+  [style*="--hero-img-webp"] { --hero-img: var(--hero-img-webp) !important; }
+}
