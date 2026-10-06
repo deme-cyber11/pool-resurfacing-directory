@@ -303,3 +303,25 @@ body.dm .mobile-cta-bar { display: none; }
 @supports (background-image: image-set(url("a.webp") type("image/webp"))) {
   [style*="--hero-img-webp"] { --hero-img: var(--hero-img-webp) !important; }
 }
+
+/* ── DESIGN-CHECK 2026-10-06: defects found by clicking and measuring the live site ── */
+
+/* Phone menu. The drawer (z-index 60) sat above the sticky nav (z-index 50), and the
+   nav's stacking context trapped the X inside it, so once the menu was open the X could
+   not be tapped and nothing else closed it. The drawer now slides in just below the nav
+   bar, so the X stays on top and stays dark on the white bar. */
+body.dm .mobile-nav { z-index: 45; }
+body.dm .hamburger.open { color: var(--navy); }
+/* The closed drawer parks off-screen at translateX(100%), but its -20px/60px shadow still
+   reached ~80px into the page and left a grey smear down the right edge of every page. */
+body.dm .mobile-nav:not(.open) { box-shadow: none; }
+
+/* State hub city cards (/arizona/, /florida/, /nevada/). The page's own card padding
+   stacked on top of this file's, the colour bar sat inset instead of along the top edge,
+   "View ... Guide" buttons dropped their arrow onto a second line, and the buttons
+   landed at different heights in neighbouring cards. */
+body.dm .city-card:has(> .city-card-body) { padding: 0; }
+body.dm .city-card > :is(.city-card-bar, .city-card-img) { flex: none; }
+body.dm .city-card > .city-card-body { display: flex; flex-direction: column; flex: 1 1 auto; padding: 24px 26px 26px; }
+body.dm .city-card > .city-card-body > :nth-last-child(2) { margin-bottom: 1.25rem; }
+body.dm .city-card > .city-card-body > .btn-primary { margin-top: auto; align-self: flex-start; white-space: nowrap; padding: .75rem 1.4rem; }

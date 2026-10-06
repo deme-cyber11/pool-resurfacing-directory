@@ -19,6 +19,7 @@ button{cursor:pointer;font-family:inherit;border:none}
 .nav__logo{font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.01em;display:inline-flex;align-items:center}
 .nav__logo span{color:#38bdf8}
 .nav__logo{text-decoration:none}
+.nav__logo>span:last-child{margin-left:.3em}
 .nav__cta{background:#f97316;color:#fff;font-weight:700;font-size:.875rem;padding:9px 20px;border-radius:100px;white-space:nowrap}
 .page{max-width:680px;margin:0 auto;padding:40px 16px 80px}
 .page-header{text-align:center;margin-bottom:32px}
@@ -33,6 +34,8 @@ button{cursor:pointer;font-family:inherit;border:none}
 @media(max-width:520px){.row{grid-template-columns:1fr}}
 .field{margin-bottom:16px}
 .field:last-child{margin-bottom:0}
+.row:not(:last-child){margin-bottom:16px}
+.row>.field{margin-bottom:0}
 label{display:block;font-size:.8125rem;font-weight:600;color:#374151;margin-bottom:6px;line-height:1.4}
 label .req{color:#145da0;margin-left:2px}
 label .hint{font-weight:400;color:#64748b}
@@ -216,7 +219,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
         <option value="">Select if known...</option>
           <option>In-ground — concrete/gunite</option>
           <option>In-ground — fiberglass</option>
-          <option>Pool + Spa combo</option>
+          <option value="Pool + Spa combo">Pool and spa combo</option>
           <option>Spa / Hot Tub only</option>
           <option>Not sure</option>
       </select>
